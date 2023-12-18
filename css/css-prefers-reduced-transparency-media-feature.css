@@ -1,0 +1,63 @@
+@import "reset.css";
+
+/* ------------------------ */
+/*       no-preference      */
+/* ------------------------ */
+.card {
+  --primary: #ff00dd;
+  --primaryDark: #300031;
+  --blackTransparent: rgba(0, 0, 0, 0.4);
+  --white: #fff;
+
+  display: grid;
+  max-inline-size: 45ch;
+  align-items: end;
+  grid-template-rows: 1fr auto;
+  overflow: clip;
+  border-radius: 1.5rem;
+
+  > * {
+    grid-area: 1 / 1;
+  }
+
+  > img {
+    border-radius: 1.5rem;
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+  }
+
+  > figcaption {
+    display: grid;
+    gap: 1ch;
+    padding: 2ch;
+    padding-block-start: 17ch;
+    color: var(--white);
+    background: linear-gradient(
+      to top,
+      var(--primaryDark),
+      var(--blackTransparent)
+    );
+  }
+}
+
+/* ------------------------ */
+/*          reduce          */
+/* ------------------------ */
+@media (prefers-reduced-transparency: reduce) {
+  .card {
+    border-radius: 0;
+
+    > * {
+      grid-area: inherit;
+    }
+
+    > figcaption {
+      display: grid;
+      padding-block-start: 1ch;
+      background: none;
+      padding: 2ch 1ch;
+    }
+  }
+}

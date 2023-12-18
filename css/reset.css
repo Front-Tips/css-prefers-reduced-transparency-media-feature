@@ -1,0 +1,37 @@
+:root {
+  --background-color: #460059;
+  --text-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  min-block-size: 100%;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding-top: 5rem;
+
+  background: linear-gradient(
+    #0b0015 60%,
+    var(--background-color)
+  );
+  color: var(--text-color);
+}
+
+p {
+  line-height: 1.6;
+  text-wrap: pretty;
+}
